@@ -21,7 +21,7 @@ class CategoriesDataModel {
 class DataModel {
   late int id;
   late String name;
- late String image;
+  late String image;
   DataModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     name = json['name'];

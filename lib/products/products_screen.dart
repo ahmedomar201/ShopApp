@@ -34,7 +34,7 @@ Widget productsBuilder(HomeModel model,CategoriesModel categoriesModel,context)=
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
       CarouselSlider(
-          items: model.data?.banners.map((e)=>
+          items: model.data.banners.map((e)=>
               Image(
                 image: NetworkImage('${e.image}'),
                 width: double.infinity,
@@ -99,8 +99,8 @@ Widget productsBuilder(HomeModel model,CategoriesModel categoriesModel,context)=
           mainAxisSpacing: 1,
           crossAxisSpacing: 1,
           childAspectRatio: 1/1.59,
-          children: List.generate(model.data!.products.length,
-                  (index) =>buildGridProducts(model.data!.products[index],context)
+          children: List.generate(model.data.products.length,
+                  (index) =>buildGridProducts(model.data.products[index],context)
           ),
         ),
       ),
@@ -108,7 +108,7 @@ Widget productsBuilder(HomeModel model,CategoriesModel categoriesModel,context)=
   ),
 );
 
-Widget buildCategoriesItem(DataModel model)=>Stack(
+Widget buildCategoriesItem( DataModel model)=>Stack(
   alignment: AlignmentDirectional.bottomCenter,
   children: [
     Image(image:NetworkImage(model.image),
@@ -198,6 +198,7 @@ Widget buildGridProducts(ProductsModel model,context)=>Container(
                 IconButton(
                     icon: CircleAvatar(
                       backgroundColor:Colors.grey,
+                      //ShopLayoutCubit.get(context).favorite![model.id]!?defaultColor:Colors.grey,
                       radius: 15,
                       child: Icon(
                         size:14,

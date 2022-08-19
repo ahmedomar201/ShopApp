@@ -45,9 +45,9 @@ void getHomeData() {
     // print(homeModel?.status);
     // printFullText(homeModel.toString());
 
-    homeModel?.data?.products.forEach((element){
+    homeModel?.data.products.forEach((element){
       favorite?.addAll({
-        element.id:element.inFavorites,
+        element.id!:element.inFavorites!,
       });
       print(favorite.toString());
     });
