@@ -7,12 +7,24 @@ import 'package:marketapp/models/categories_model.dart';
 import 'package:marketapp/models/home_model.dart';
 import 'package:marketapp/layout/cubit_layout.dart';
 import 'package:marketapp/layout/states_layout.dart';
+import 'package:marketapp/tasks.dart';
 class ProductsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<ShopLayoutCubit,ShopStates>(
-      listener: (context,state){},
+      listener: (context,state)
+      {
+        if(state is ShopSuccessChangeFavoritesStates) {
+          if (!state.model.status!) 
+          {
+            showToast(
+                text: state.model.message!,
+                state: ToastStates.ERROR);
+
+          }
+        }
+      },
       builder: (context,state)
       {
         //ConditionalBuilder
@@ -34,7 +46,7 @@ Widget productsBuilder(HomeModel model,CategoriesModel categoriesModel,context)=
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
       CarouselSlider(
-          items: model.data?.banners.map((e)=>
+          items: model.data.banners.map((e)=>
               Image(
                 image: NetworkImage('${e.image}'),
                 width: double.infinity,
@@ -99,8 +111,8 @@ Widget productsBuilder(HomeModel model,CategoriesModel categoriesModel,context)=
           mainAxisSpacing: 1,
           crossAxisSpacing: 1,
           childAspectRatio: 1/1.59,
-          children: List.generate(model.data!.products.length,
-                  (index) =>buildGridProducts(model.data!.products[index],context)
+          children: List.generate(model.data.products.length,
+                  (index) =>buildGridProducts(model.data.products[index],context)
           ),
         ),
       ),
@@ -108,7 +120,7 @@ Widget productsBuilder(HomeModel model,CategoriesModel categoriesModel,context)=
   ),
 );
 
-Widget buildCategoriesItem(DataModel model)=>Stack(
+Widget buildCategoriesItem( DataModel model)=>Stack(
   alignment: AlignmentDirectional.bottomCenter,
   children: [
     Image(image:NetworkImage(model.image),
@@ -197,7 +209,7 @@ Widget buildGridProducts(ProductsModel model,context)=>Container(
                 Spacer(),
                 IconButton(
                     icon: CircleAvatar(
-                      backgroundColor:Colors.grey,
+                      backgroundColor:ShopLayoutCubit.get(context).favorites[model.id]!?defaultColor:Colors.grey,
                       radius: 15,
                       child: Icon(
                         size:14,
@@ -205,7 +217,11 @@ Widget buildGridProducts(ProductsModel model,context)=>Container(
                         color: Colors.white,
                       ),
                     ),
-                  onPressed: (){},)
+                  onPressed: ()
+                  {
+                    ShopLayoutCubit.get(context).changeFavorites(model.id);
+                    print(model.id);
+                  },)
               ],
             ),
           ],

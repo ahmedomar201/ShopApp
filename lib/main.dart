@@ -21,6 +21,7 @@ void main()async {
  // bool isDark=CacheHelper.getData(key:"isDark");
   bool? onBoarding=CacheHelper.getData(key:"OnBoarding");
   token=CacheHelper.getData(key:"token");
+  print(token);
 
  late Widget widget;
   //print(onBoarding);
@@ -64,7 +65,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
           home:startWidget,
           //startWidget
-            //ShopLayout()
+          //ShopLayout()
     ),
     ),
     );
@@ -78,4 +79,4 @@ class MyApp extends StatelessWidget {
 // //BlocProvider(create: (context)=>NewsCubit()..changeAppMode(fromShared:isDark)),
 // ],
 
-//
+//t3RhATdBvKlMTSJ5TI9cDwCq05uHRQOuCXqlncQoYSslrFPNMSOFsImkmxygU3JMb4tUYv

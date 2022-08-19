@@ -5,6 +5,7 @@ class ShopLoginModel {
   ShopLoginModel.fromJson(Map<String, dynamic> json) {
     status = json['status'];
     message = json['message'];
+
     // data = json['data'];
     // data == null ? null : UserData.fromJson(json['data']);
     //data = ((json['data'] = UserData.fromJson(json['data'])));
@@ -43,3 +44,7 @@ class UserData {
     token = json['token'];
   }
 }
+
+
+//email:ahmed.omar@gmail.com
+//password:123456
