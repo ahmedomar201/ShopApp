@@ -16,7 +16,7 @@ class ProductsScreen extends StatelessWidget {
       listener: (context,state)
       {
         if(state is ShopSuccessChangeFavoritesStates) {
-          if (!state.model.status!) 
+          if (!state.model.status!)
           {
             showToast(
                 text: state.model.message!,
@@ -120,7 +120,7 @@ Widget productsBuilder(HomeModel model,CategoriesModel categoriesModel,context)=
   ),
 );
 
-Widget buildCategoriesItem( DataModel model)=>Stack(
+Widget buildCategoriesItem(DataModel model)=>Stack(
   alignment: AlignmentDirectional.bottomCenter,
   children: [
     Image(image:NetworkImage(model.image),
@@ -209,7 +209,7 @@ Widget buildGridProducts(ProductsModel model,context)=>Container(
                 Spacer(),
                 IconButton(
                     icon: CircleAvatar(
-                      backgroundColor:ShopLayoutCubit.get(context).favorites[model.id]!?defaultColor:Colors.grey,
+                      backgroundColor:ShopLayoutCubit.get(context).favorites![model.id]!?defaultColor:Colors.grey,
                       radius: 15,
                       child: Icon(
                         size:14,

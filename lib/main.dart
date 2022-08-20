@@ -79,4 +79,4 @@ class MyApp extends StatelessWidget {
 // //BlocProvider(create: (context)=>NewsCubit()..changeAppMode(fromShared:isDark)),
 // ],
 
-//t3RhATdBvKlMTSJ5TI9cDwCq05uHRQOuCXqlncQoYSslrFPNMSOFsImkmxygU3JMb4tUYv
+//
