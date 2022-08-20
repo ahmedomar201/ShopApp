@@ -13,7 +13,7 @@ class ShopSuccessHomedDataStates extends ShopStates{}
 class ShopErrorHomedDataStates extends ShopStates{}
 
 
-class ShopLoadingCategoriesStates extends ShopStates{}
+
 class ShopSuccessCategoriesStates extends ShopStates{}
 class ShopErrorCategoriesStates extends ShopStates{}
 
@@ -25,3 +25,7 @@ class ShopSuccessChangeFavoritesStates extends ShopStates
   ShopSuccessChangeFavoritesStates(this.model);
 }
 class ShopErrorChangeFavoritesStates extends ShopStates{}
+
+class ShopLoadingFavoritesStates extends ShopStates{}
+class ShopSuccessFavoritesStates extends ShopStates{}
+class ShopErrorFavoritesStates extends ShopStates{}

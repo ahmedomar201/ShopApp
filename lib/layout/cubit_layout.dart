@@ -4,6 +4,7 @@ import 'package:marketapp/cateogries/cateogries_screen.dart';
 import 'package:marketapp/layout/states_layout.dart';
 import 'package:marketapp/models/categories_model.dart';
 import 'package:marketapp/models/changefavouritemodel.dart';
+import 'package:marketapp/models/favorits_model.dart';
 import 'package:marketapp/network/remote/dio_helper.dart';
 import 'package:marketapp/network/remote/end_points.dart';
 import 'package:marketapp/favorites/favorites_screen.dart';
@@ -34,7 +35,10 @@ void changeBottom(int index)
   currentIndex=index;
   emit(ShopChangeBottomNavLayoutStates());
 }
-      Map<int,bool>?favorites={};
+
+
+
+   Map<int,bool>?favorites={};
    HomeModel? homeModel;
 void getHomeData() {
   emit(ShopLoadingHomedDataStates());
@@ -62,6 +66,10 @@ void getHomeData() {
   }
   );
 }
+
+
+
+
   CategoriesModel? categoriesModel;
   void getCategories() {
 
@@ -81,6 +89,9 @@ void getHomeData() {
     }
     );
   }
+
+
+
   ChangeFavoritesModel? changeFavoritesModel;
   void changeFavorites(int productId)
   {
@@ -101,6 +112,9 @@ void getHomeData() {
       {
         favorites![productId]=!favorites![productId]!;
 
+      }else
+      {
+        getFavourites();
       }
 
     }).catchError((error)
@@ -109,6 +123,30 @@ void getHomeData() {
 
       emit(ShopErrorChangeFavoritesStates());
     });
+  }
+
+
+
+  FavoritesModel?favoritesModel;
+  void getFavourites() {
+
+    emit(ShopLoadingFavoritesStates());
+    DioHelper.getData(
+      url: FAVORITES,
+      token: token,
+    ).
+    then((value) {
+      favoritesModel=FavoritesModel.fromJson(value.data);
+      //print(homeModel.status);
+      //printFullText(categoriesModel.toString());
+      emit(ShopSuccessFavoritesStates());
+    }
+    ).
+    catchError((error) {
+      print(error.toString());
+      emit(ShopErrorFavoritesStates());
+    }
+    );
   }
 }
 
