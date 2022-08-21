@@ -110,7 +110,7 @@ Widget productsBuilder(HomeModel model,CategoriesModel categoriesModel,context)=
           crossAxisCount: 2,
           mainAxisSpacing: 1,
           crossAxisSpacing: 1,
-          childAspectRatio: 1/1.59,
+          childAspectRatio: 1/1.67,
           children: List.generate(model.data.products.length,
                   (index) =>buildGridProducts(model.data.products[index],context)
           ),
@@ -123,7 +123,8 @@ Widget productsBuilder(HomeModel model,CategoriesModel categoriesModel,context)=
 Widget buildCategoriesItem(DataModel model)=>Stack(
   alignment: AlignmentDirectional.bottomCenter,
   children: [
-    Image(image:NetworkImage(model.image),
+    Image(
+      image:NetworkImage(model.image),
       height:100 ,
       width:100,
       fit: BoxFit.cover,),
