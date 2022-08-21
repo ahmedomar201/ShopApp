@@ -5,6 +5,7 @@ import 'package:marketapp/layout/states_layout.dart';
 import 'package:marketapp/models/categories_model.dart';
 import 'package:marketapp/models/changefavouritemodel.dart';
 import 'package:marketapp/models/favorits_model.dart';
+import 'package:marketapp/models/profile_model.dart';
 import 'package:marketapp/network/remote/dio_helper.dart';
 import 'package:marketapp/network/remote/end_points.dart';
 import 'package:marketapp/favorites/favorites_screen.dart';
@@ -55,13 +56,13 @@ void getHomeData() {
       favorites?.addAll({
         element.id:element.inFavorites!,
       });
-      print(favorites.toString());
+      //print(favorites.toString());
     });
     emit(ShopSuccessHomedDataStates());
   }
   ).
   catchError((error) {
-    print(error.toString());
+    //print(error.toString());
     emit(ShopErrorHomedDataStates());
   }
   );
@@ -148,6 +149,32 @@ void getHomeData() {
     }
     );
   }
+
+
+
+  ProfileModel?userModel;
+  void userModelData() {
+
+    emit(ShopLoadingUserDataStates());
+    DioHelper.getData(
+      url: PROFILE,
+      token: token,
+    ).
+    then((value) {
+      userModel=ProfileModel.fromJson(value.data);
+      //print(homeModel.status);
+      //printFullText(userModel!.data!.name);
+      emit(ShopSuccessUserDataStates(userModel!));
+    }
+    ).
+    catchError((error) {
+      print(error.toString());
+      emit(ShopErrorUserDataStates());
+    }
+    );
+  }
+
+
 }
 
 
