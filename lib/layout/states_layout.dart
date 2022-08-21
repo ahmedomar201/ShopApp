@@ -1,4 +1,5 @@
 import 'package:marketapp/models/changefavouritemodel.dart';
+import 'package:marketapp/models/profile_model.dart';
 
 abstract class ShopStates{}
 
@@ -29,3 +30,15 @@ class ShopErrorChangeFavoritesStates extends ShopStates{}
 class ShopLoadingFavoritesStates extends ShopStates{}
 class ShopSuccessFavoritesStates extends ShopStates{}
 class ShopErrorFavoritesStates extends ShopStates{}
+
+
+class ShopLoadingUserDataStates extends ShopStates{}
+
+class ShopSuccessUserDataStates extends ShopStates
+{
+  final ProfileModel  loginModel;
+
+  ShopSuccessUserDataStates(this.loginModel);
+}
+class ShopErrorUserDataStates extends ShopStates{}
+

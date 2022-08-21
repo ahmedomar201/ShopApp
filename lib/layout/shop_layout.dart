@@ -14,13 +14,11 @@ class ShopLayout extends StatelessWidget {
 
         return Scaffold(
         appBar: AppBar(
-          title: Expanded(
-            child: Text('Salla',
-              style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 30
-              ),),
-          ),
+          title: Text('Salla',
+            style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 30
+            ),),
           actions: [
             IconButton(
              icon:Icon(

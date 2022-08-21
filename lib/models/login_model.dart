@@ -16,7 +16,7 @@ class ShopLoginModel {
 
 class UserData {
   late int id;
-  String? name;
+  late String name;
   late String email;
   late String phone;
   late String image;

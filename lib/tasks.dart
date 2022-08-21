@@ -77,7 +77,7 @@ Color  choseToastColor(ToastStates state )
 
 void signOut(context)
 {
-    CacheHelper.removeData(key: 'token')!.then((value)
+    CacheHelper.removeData(key: 'token')?.then((value)
     {
         if(value)
         {

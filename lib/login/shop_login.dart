@@ -27,8 +27,11 @@ class ShopLoginScreen  extends StatelessWidget {
             if (state.loginModel.status) {
               print(state.loginModel.data?.token);
               print(state.loginModel.message);
-              CacheHelper.saveData(key: 'token', value: state.loginModel.data?.token).then((value)
+              CacheHelper.saveData(
+                  key: 'token',
+                  value: state.loginModel.data?.token).then((value)
               {
+                 token=state.loginModel.data!.token;
                 navigateAndFinish(context,
                     ShopLayout());
               });
@@ -83,7 +86,7 @@ class ShopLoginScreen  extends StatelessWidget {
                         ),
                         validator:(value) {
                           if(value!.isEmpty){
-                            return "email address must not be empty ";
+                            return "Email address must not be empty ";
                           }
                           return null;
                         },
