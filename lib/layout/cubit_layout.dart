@@ -175,6 +175,40 @@ void getHomeData() {
   }
 
 
+  void updateUserData({
+    required String name,
+    required String email,
+    required String phone
+  }) {
+
+    emit(ShopLoadingUpdateUserStates());
+    DioHelper.putData(
+      url: UPDATE_PROFILE,
+      token: token,
+      data:
+      {
+        'name':name,
+        'email':email,
+        'phone':phone,
+
+      }
+    ).
+    then((value) {
+      userModel=ProfileModel.fromJson(value.data);
+      //print(homeModel.status);
+      //printFullText(userModel!.data!.name);
+      emit(ShopSuccessUpdateUserStates(userModel!));
+    }
+    ).
+    catchError((error) {
+      print(error.toString());
+      emit(ShopErrorUpdateUserStates());
+    }
+    );
+  }
+
+
+
 }
 
 
