@@ -1,10 +1,9 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:marketapp/models/search_model.dart';
-import 'package:marketapp/network/remote/dio_helper.dart';
-import 'package:marketapp/network/remote/end_points.dart';
 import 'package:marketapp/search/search_states.dart';
-import 'package:marketapp/tasks.dart';
-
+import 'package:marketapp/shared/componets/tasks.dart';
+import '../shared/network/remote/dio_helper.dart';
+import '../shared/network/remote/end_points.dart';
 class SearchCubit extends Cubit<SearchStates>
 {
 SearchCubit():super(SearchInitial());
