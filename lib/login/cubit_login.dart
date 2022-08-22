@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:marketapp/network/remote/dio_helper.dart';
-import 'package:marketapp/network/remote/end_points.dart';
 import 'package:marketapp/models/login_model.dart';
 import 'package:marketapp/login/state_login.dart';
+import '../shared/network/remote/dio_helper.dart';
+import '../shared/network/remote/end_points.dart';
 class ShopLoginCubit extends Cubit<ShopLoginStates>
 {
   ShopLoginCubit():super(ShopLoginInitialState());

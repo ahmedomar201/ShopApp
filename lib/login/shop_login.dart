@@ -1,11 +1,11 @@
 import 'package:buildcondition/buildcondition.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:marketapp/network/local/cash_helper.dart';
 import 'package:marketapp/layout/shop_layout.dart';
 import 'package:marketapp/login/state_login.dart';
-import 'package:marketapp/register/register_screen.dart';
-import 'package:marketapp/tasks.dart';
+import 'package:marketapp/modules/register/register_screen.dart';
+import 'package:marketapp/shared/componets/tasks.dart';
+import '../shared/network/local/cash_helper.dart';
 import 'cubit_login.dart';
 import 'state_login.dart';
 // ignore: must_be_immutable
@@ -105,8 +105,6 @@ class ShopLoginScreen  extends StatelessWidget {
                                 email: emailController.text,
                                 password: passwordController.text
                             );
-                            // print(passwordController.text);
-                            // print(emailController.text);
                           }
                         },
                         onTap: (){

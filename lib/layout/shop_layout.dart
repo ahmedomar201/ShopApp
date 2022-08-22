@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:marketapp/layout/cubit_layout.dart';
-import 'package:marketapp/search/search_screen.dart';
+import '../modules/search/search_screen.dart';
 import 'states_layout.dart';
 class ShopLayout extends StatelessWidget {
   @override

@@ -1,5 +1,4 @@
-
-import '../models/profile_model.dart';
+import 'package:marketapp/models/profile_model.dart';
 abstract class ShopRegisterStates{
 }
 

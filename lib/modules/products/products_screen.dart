@@ -2,12 +2,12 @@ import 'package:buildcondition/buildcondition.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:marketapp/colors.dart';
+import 'package:marketapp/shared/style/colors.dart';
 import 'package:marketapp/models/categories_model.dart';
 import 'package:marketapp/models/home_model.dart';
 import 'package:marketapp/layout/cubit_layout.dart';
 import 'package:marketapp/layout/states_layout.dart';
-import 'package:marketapp/tasks.dart';
+import 'package:marketapp/shared/componets/tasks.dart';
 class ProductsScreen extends StatelessWidget {
 
   @override

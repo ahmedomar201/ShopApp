@@ -5,12 +5,12 @@ import 'package:marketapp/layout/cubit_layout.dart';
 import 'package:marketapp/layout/shop_layout.dart';
 import 'package:marketapp/layout/states_layout.dart';
 import 'package:marketapp/login/shop_login.dart';
-import 'package:marketapp/onboarrding.dart';
-import 'package:marketapp/tasks.dart';
-import 'package:marketapp/theme.dart';
+import 'package:marketapp/onboarding/onboarrding.dart';
+import 'package:marketapp/shared/componets/tasks.dart';
+import 'package:marketapp/shared/network/local/cash_helper.dart';
+import 'package:marketapp/shared/style/theme.dart';
 import 'bloc_observer.dart';
-import 'network/local/cash_helper.dart';
-import 'network/remote/dio_helper.dart';
+import 'shared/network/remote/dio_helper.dart';
 void main()async {
   WidgetsFlutterBinding.ensureInitialized();
   // WidgetsFlutterBinding.ensureInitialized() بتخلي الحاجات اللي بعديها تتنفذ

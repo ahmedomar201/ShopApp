@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:marketapp/network/local/cash_helper.dart';
 import 'package:marketapp/login/shop_login.dart';
-import 'package:marketapp/tasks.dart';
+import 'package:marketapp/shared/componets/tasks.dart';
+import 'package:marketapp/shared/network/local/cash_helper.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-import 'colors.dart';
+import '../shared/style/colors.dart';
 
 class BoardingModel
 {

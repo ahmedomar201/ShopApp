@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:marketapp/layout/cubit_layout.dart';
 import 'package:marketapp/layout/states_layout.dart';
-import 'package:marketapp/tasks.dart';
+import 'package:marketapp/shared/componets/tasks.dart';
 // ignore: must_be_immutable
 class SettingScreen extends StatelessWidget {
   var nameController =TextEditingController();
