@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:marketapp/network/local/cash_helper.dart';
 import 'package:marketapp/layout/shop_layout.dart';
 import 'package:marketapp/login/state_login.dart';
-import 'package:marketapp/register_screen.dart';
+import 'package:marketapp/register/register_screen.dart';
 import 'package:marketapp/tasks.dart';
 import 'cubit_login.dart';
 import 'state_login.dart';

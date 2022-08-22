@@ -8,3 +8,4 @@ const FAVORITES="favorites";
 
 const PROFILE="profile";
 
+const REGISTER="register";

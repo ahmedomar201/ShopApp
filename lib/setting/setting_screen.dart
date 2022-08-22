@@ -15,10 +15,7 @@ class SettingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<ShopLayoutCubit,ShopStates>(
-      listener:(context,state)
-      {
-        if(state is ShopSuccessUserDataStates) {}
-      },
+      listener:(context,state) {},
       builder:(context,state)=>BuildCondition(
         condition: ShopLayoutCubit.get(context).userModel!=null,
         builder: (context) {
