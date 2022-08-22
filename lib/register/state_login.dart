@@ -1,8 +1,5 @@
 
-
-
 import '../models/profile_model.dart';
-
 abstract class ShopRegisterStates{
 }
 
