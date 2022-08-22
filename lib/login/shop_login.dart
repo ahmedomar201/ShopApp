@@ -105,8 +105,6 @@ class ShopLoginScreen  extends StatelessWidget {
                                 email: emailController.text,
                                 password: passwordController.text
                             );
-                            // print(passwordController.text);
-                            // print(emailController.text);
                           }
                         },
                         onTap: (){
