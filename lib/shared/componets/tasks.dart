@@ -159,7 +159,7 @@ Widget buildListProduct( model,context,{bool oldPrice=true})=> Padding(
                                     IconButton(
                                         icon: CircleAvatar(
                                             backgroundColor:ShopLayoutCubit.get(context).favorites![ model.id]!?defaultColor:Colors.grey,
-                                            //ShopLayoutCubit.get(context).favorites![model.id]!?defaultColor:
+
                                             radius: 15,
                                             child: Icon(
                                                 size:14,

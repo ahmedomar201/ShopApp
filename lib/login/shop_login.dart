@@ -7,7 +7,6 @@ import 'package:marketapp/modules/register/register_screen.dart';
 import 'package:marketapp/shared/componets/tasks.dart';
 import '../shared/network/local/cash_helper.dart';
 import 'cubit_login.dart';
-import 'state_login.dart';
 // ignore: must_be_immutable
 class ShopLoginScreen  extends StatelessWidget {
   var emailController =TextEditingController();
@@ -130,8 +129,7 @@ class ShopLoginScreen  extends StatelessWidget {
                       SizedBox(
                         height:20,
                       ),
-                        //condition: state is!ShopLoginLoadingState,
-                        //builder: (context)=>
+
                       BuildCondition(
                         condition: state is!ShopLoginLoadingState,
                         builder: (context)=> Container(
@@ -143,8 +141,7 @@ class ShopLoginScreen  extends StatelessWidget {
                                 ShopLoginCubit.get(context).userLogin(
                                     email: emailController.text,
                                     password: passwordController.text);
-                                // print(passwordController.text);
-                                // print(emailController.text);
+
                               }
                           },
                               child: Text("LOGIN",

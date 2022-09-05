@@ -48,20 +48,19 @@ void getHomeData() {
       token:token ).
   then((value) {
     homeModel=HomeModel.fromJson(value.data);
-    // print(homeModel?.status);
-    // printFullText(homeModel.toString());
+
 
     homeModel?.data.products.forEach((element){
       favorites?.addAll({
         element.id:element.inFavorites!,
       });
-      //print(favorites.toString());
+
     });
     emit(ShopSuccessHomedDataStates());
   }
   ).
   catchError((error) {
-    //print(error.toString());
+
     emit(ShopErrorHomedDataStates());
   }
   );
@@ -78,8 +77,7 @@ void getHomeData() {
         ).
     then((value) {
       categoriesModel=CategoriesModel.fromJson(value.data);
-      //print(homeModel.status);
-      //printFullText(categoriesModel.toString());
+
       emit(ShopSuccessCategoriesStates());
     }
     ).
@@ -137,8 +135,7 @@ void getHomeData() {
     ).
     then((value) {
       favoritesModel=FavoritesModel.fromJson(value.data);
-      //print(homeModel.status);
-      //printFullText(categoriesModel.toString());
+
       emit(ShopSuccessFavoritesStates());
     }
     ).
@@ -161,8 +158,7 @@ void getHomeData() {
     ).
     then((value) {
       userModel=ProfileModel.fromJson(value.data);
-      //print(homeModel.status);
-      //printFullText(userModel!.data!.name);
+
       emit(ShopSuccessUserDataStates(userModel!));
     }
     ).
@@ -194,8 +190,7 @@ void getHomeData() {
     ).
     then((value) {
       userModel=ProfileModel.fromJson(value.data);
-      //print(homeModel.status);
-      //printFullText(userModel!.data!.name);
+
       emit(ShopSuccessUpdateUserStates(userModel!));
     }
     ).

@@ -63,10 +63,3 @@ class ShopLayout extends StatelessWidget {
   }
   }
 
-// TextButton(
-// onPressed: ()
-// {
-//
-// },
-// child: Text('SIGN OUT'),
-// ),

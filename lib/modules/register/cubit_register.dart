@@ -34,10 +34,7 @@ class ShopRegisterCubit extends Cubit<ShopRegisterStates>
     ).then((value)
     {
       registerModel=ProfileModel.fromJson(value.data);
-      // print(registerModel!.data?.token);
-      // print(registerModel!.message);
-      // print(registerModel!.status);
-      // print(value.data);
+
 
       emit(ShopRegisterSuccessState(registerModel!));
     }).catchError((error)

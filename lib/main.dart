@@ -1,4 +1,3 @@
-// ignore_for_file: deprecated_member_use
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:marketapp/layout/cubit_layout.dart';
@@ -17,6 +16,7 @@ void main()async {
   // وبعد كدة يعمل run
   DioHelper.init();
   await CacheHelper.init();
+  Bloc.observer = MyBlocObserver();
 
  // bool isDark=CacheHelper.getData(key:"isDark");
   bool? onBoarding=CacheHelper.getData(key:"OnBoarding");
@@ -34,16 +34,14 @@ if(onBoarding!=null)
 {
   widget=OnBoardingScreen();
 }
-  BlocOverrides.runZoned(
-        () {
-      // Use blocs...
+
       runApp(MyApp(
         //isDark: isDark,
         startWidget: widget,
       ));
-    },
-    blocObserver: MyBlocObserver(),
-  );
+
+
+
 }
 class MyApp extends StatelessWidget {
  // late final bool isDark;
@@ -65,18 +63,9 @@ class MyApp extends StatelessWidget {
          //themeMode:NewsCubit.get(context).isDark ? ThemeMode.dark: ThemeMode.light,
         debugShowCheckedModeBanner: false,
           home:startWidget,
-          //startWidget
-          //ShopLayout()
     ),
     ),
     );
 
           }
   }
-
-// MultiBlocProvider(
-// providers: [
-// //BlocProvider(create: (context)=>NewsCubit()..getBusiness()..getScience()..getSports(),),
-// //BlocProvider(create: (context)=>NewsCubit()..changeAppMode(fromShared:isDark)),
-// ],
-

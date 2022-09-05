@@ -27,9 +27,6 @@ class ProductsScreen extends StatelessWidget {
       },
       builder: (context,state)
       {
-        //ConditionalBuilder
-        // condition: ShopLayoutCubit.get(context).addCartModel!=null,
-        // fallback: (context)=>Center(child: CircularProgressIndicator()),);
         return BuildCondition(
           condition: ShopLayoutCubit.get(context).homeModel!=null
               &&ShopLayoutCubit.get(context).categoriesModel!=null,
