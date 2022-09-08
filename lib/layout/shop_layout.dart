@@ -6,59 +6,63 @@ import 'states_layout.dart';
 class ShopLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<ShopLayoutCubit,ShopStates>
-      (
-      listener:(context,state){},
-      builder: (context,state){
-        var cubit= ShopLayoutCubit.get(context) ;
+    return BlocProvider(
+      create: (BuildContext context)=>
+      ShopLayoutCubit()..getHomeData()..getCategories()..getFavourites()..userModelData(),
+      child: BlocConsumer<ShopLayoutCubit,ShopStates>
+        (
+        listener:(context,state){},
+        builder: (context,state){
+          var cubit= ShopLayoutCubit.get(context) ;
 
-        return Scaffold(
-        appBar: AppBar(
-          title: Text('Salla',
-            style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 30
-            ),),
-          actions: [
-            IconButton(
-             icon:Icon(
-             Icons.search ),
-              onPressed:()
-            {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => SearchScreen()));
-            },
-                ),
-          ],
-        ),
-        body: cubit.bottomScreen[
-          cubit.currentIndex
-        ],
-          bottomNavigationBar: BottomNavigationBar(
-            onTap:(index)
-            {
-              cubit.changeBottom(index);
-            } ,
-            currentIndex:cubit.currentIndex,
-
-            items: [
-              BottomNavigationBarItem(icon: Icon(
-                Icons.home
-              ),label: 'Home',),
-              BottomNavigationBarItem(icon: Icon(
-                  Icons.apps
-              ),label: 'categories'),
-              BottomNavigationBarItem(icon: Icon(
-                  Icons.favorite
-              ),label: 'Favorites'),
-              BottomNavigationBarItem(icon: Icon(
-                  Icons.settings
-              ),label: 'Settings'),
+          return Scaffold(
+          appBar: AppBar(
+            title: Text('Salla',
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 30
+              ),),
+            actions: [
+              IconButton(
+               icon:Icon(
+               Icons.search ),
+                onPressed:()
+              {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => SearchScreen()));
+              },
+                  ),
             ],
           ),
+          body: cubit.bottomScreen[
+            cubit.currentIndex
+          ],
+            bottomNavigationBar: BottomNavigationBar(
+              onTap:(index)
+              {
+                cubit.changeBottom(index);
+              } ,
+              currentIndex:cubit.currentIndex,
 
-      );
+              items: [
+                BottomNavigationBarItem(icon: Icon(
+                  Icons.home
+                ),label: 'Home',),
+                BottomNavigationBarItem(icon: Icon(
+                    Icons.apps
+                ),label: 'categories'),
+                BottomNavigationBarItem(icon: Icon(
+                    Icons.favorite
+                ),label: 'Favorites'),
+                BottomNavigationBarItem(icon: Icon(
+                    Icons.settings
+                ),label: 'Settings'),
+              ],
+            ),
+
+        );
   }
+      ),
     );
   }
   }
