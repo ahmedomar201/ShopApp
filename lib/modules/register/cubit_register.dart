@@ -11,7 +11,6 @@ class ShopRegisterCubit extends Cubit<ShopRegisterStates>
   static  ShopRegisterCubit get(context)=>BlocProvider.of(context);
 
    ProfileModel? registerModel;
-
   void userRegister({
     required String name,
     required String email,

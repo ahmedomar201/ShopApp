@@ -10,8 +10,6 @@ class ShopLoginCubit extends Cubit<ShopLoginStates>
   static  ShopLoginCubit get(context)=>BlocProvider.of(context);
 
   late ShopLoginModel loginModel;
-
-
   void userLogin({
     required String email,
     required String password,

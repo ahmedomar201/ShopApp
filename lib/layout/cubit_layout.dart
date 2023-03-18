@@ -37,7 +37,6 @@ void changeBottom(int index)
 }
 
 
-
    Map<int,bool>?favorites={};
    HomeModel? homeModel;
 void getHomeData() {
